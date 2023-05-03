@@ -1,0 +1,12 @@
+# Node Modules
+node_modules/
+
+# Coverage reports - JSON & Cobertura
+coverage/
+
+# linting reports - checkstyle & HTML
+lintReports/checkstyle.xml
+lintReports/lint_report.html
+
+# Test Report - JUnit
+testReport/

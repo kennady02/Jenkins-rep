@@ -1,0 +1,35 @@
+{
+  "name": "fbwebservice",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "forever start app.js",
+    "stop": "forever stopall",
+    "lint": "gulp lint",
+    "test": "gulp test",
+    "coverage": "gulp coverage"
+  },
+  "dependencies": {
+    "body-parser": "~1.18.2",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "mongodb": "^3.0.7",
+    "mongodb-promise": "0.0.4",
+    "promise-mysql": "^3.2.1",
+    "promised-mongo": "^1.2.0",
+    "serve-favicon": "~2.4.5",
+    "forever": "~0.15.3"
+  },
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "gulp": "^4.0.0",
+    "gulp-eslint": "^4.0.2",
+    "gulp-exit": "0.0.2",
+    "gulp-istanbul": "^1.1.3",
+    "gulp-jasmine": "^4.0.0",
+    "istanbul": "^0.4.5",
+    "jasmine": "^3.1.0",
+    "jasmine-node": "^1.14.5",
+    "jasmine-reporters": "^2.3.0"
+  }
+}

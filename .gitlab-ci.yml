@@ -1,0 +1,62 @@
+cache:
+  paths:
+    - node_modules/
+
+stages:
+  - lint
+  - test
+  - coverage
+  - deploy
+
+lint:
+  stage: lint
+  script:
+    - call npm install
+    - call npm run lint
+  # artifacts:
+  #   paths:
+  #     - public
+  artifacts:
+    paths:
+      - lintReports/checkstyle.xml
+      - lintReports/lint_report.html
+    expire_in: 1 week
+  only:
+    - master
+
+test:
+  stage: test
+  script:
+    - call npm run test
+  # artifacts:
+  #   paths:
+  #     - public
+  only:
+    - master
+  artifacts:
+    paths:
+      - testReport/JUnit/junitresults.xml
+    reports:
+      junit: testReport/JUnit/junitresults.xml
+    expire_in: 1 week
+
+coverage:
+  stage: coverage
+  script:
+    - call npm run coverage
+  # artifacts:
+  #   paths:
+  #     - public
+  only:
+    - master
+
+
+deploy:
+  stage: deploy
+  script:
+    - call npm start
+  # artifacts:
+  #   paths:
+  #     - public
+  only:
+    - master
